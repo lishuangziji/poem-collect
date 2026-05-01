@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗词合集</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#f5f0e6;font-family:"微软雅黑";padding:30px;}
+        .container{max-width:800px;margin:0 auto;background:#fff;padding:40px;border-radius:12px;box-shadow:0 0 10px #ccc;}
+        h1{text-align:center;color:#8b4513;margin-bottom:30px;}
+        .poem-list{list-style:none;}
+        .poem-list li{margin:15px 0;}
+        .poem-list a{display:block;padding:12px 20px;background:#f9f3e8;color:#8b4513;text-decoration:none;border-radius:8px;font-size:18px;}
+        .poem-list a:hover{background:#ffe8cc;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>诗词文集</h1>
+        <ul class="poem-list" id="list"></ul>
+    </div>
+
+    <script>
+        // 在这里添加诗词：标题、原文、注释
+        const poemData = [
+            {
+                title: "渔家傲·天接云涛连晓雾",
+                content: "天接云涛连晓雾，星河欲转千帆舞。仿佛梦魂归帝所。闻天语，殷勤问我归何处。\n我报路长嗟日暮，学诗谩有惊人句。九万里风鹏正举。风休住，蓬舟吹取三山去！",
+                note: "【注释】\n1.云涛：如云似海的波涛。\n2.星河：银河。\n3.帝所：天帝居所。\n4.谩有：空有、徒有。"
+            },
+            // 以后你就在这里 复制上面格式 新增一首就行！
+            {
+                title: "渔家傲·天接云涛连晓雾",
+                content: "天接云涛连晓雾，星河欲转千帆舞。仿佛梦魂归帝所。闻天语，殷勤问我归何处。\n我报路长嗟日暮，学诗谩有惊人句。九万里风鹏正举。风休住，蓬舟吹取三山去！",
+                note: "【注释】\n1.云涛：如云似海的波涛。\n2.星河：银河。\n3.帝所：天帝居所。\n4.谩有：空有、徒有。"
+            }
+        ];
+
+        // 渲染列表
+        const list = document.getElementById("list");
+        poemData.forEach((item,idx)=>{
+            let li = document.createElement("li");
+            li.innerHTML = `<a href="detail.html?idx=${idx}">${item.title}</a>`;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>

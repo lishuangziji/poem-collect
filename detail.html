@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗词详情</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#f5f0e6;font-family:"微软雅黑";padding:30px;}
+        .container{max-width:800px;margin:0 auto;background:#fff;padding:40px;border-radius:12px;box-shadow:0 0 10px #ccc;}
+        h2{text-align:center;color:#8b4513;margin-bottom:25px;}
+        .content{font-size:18px;line-height:2.2;margin:20px 0;text-align:center;white-space:pre-wrap;}
+        .note{margin-top:30px;padding-top:20px;border-top:1px solid #eee;font-size:16px;line-height:1.8;color:#444;}
+        .back{display:inline-block;margin-top:30px;padding:10px 20px;background:#8b4513;color:#fff;text-decoration:none;border-radius:6px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="title"></h2>
+        <div class="content" id="content"></div>
+        <div class="note" id="note"></div>
+        <a class="back" href="index.html">← 返回列表</a>
+    </div>
+
+    <script>
+        // 和首页一模一样的诗词库
+        const poemData = [
+            {
+                title: "渔家傲·天接云涛连晓雾",
+                content: "天接云涛连晓雾，星河欲转千帆舞。仿佛梦魂归帝所。闻天语，殷勤问我归何处。\n我报路长嗟日暮，学诗谩有惊人句。九万里风鹏正举。风休住，蓬舟吹取三山去！",
+                note: "【注释】\n1.云涛：如云似海的波涛。\n2.星河：银河。\n3.帝所：天帝居所。\n4.谩有：空有、徒有。"
+            },
+            // 新增诗词也在这里同步加
+            {
+                title: "渔家傲·天接云涛连晓雾",
+                content: "天接云涛连晓雾，星河欲转千帆舞。仿佛梦魂归帝所。闻天语，殷勤问我归何处。\n我报路长嗟日暮，学诗谩有惊人句。九万里风鹏正举。风休住，蓬舟吹取三山去！",
+                note: "【注释】\n1.云涛：如云似海的波涛。\n2.星河：银河。\n3.帝所：天帝居所。\n4.谩有：空有、徒有。"
+            }
+        ];
+
+        // 获取当前诗词
+        let idx = location.search.split("idx=")[1];
+        let p = poemData[idx];
+        document.getElementById("title").innerText = p.title;
+        document.getElementById("content").innerText = p.content;
+        document.getElementById("note").innerText = p.note;
+    </script>
+</body>
+</html>
